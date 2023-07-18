@@ -5,14 +5,18 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NameFragment" >
+    android:background="#B2A2B6"
+    tools:context=".NameFragment">
 
     <TextView
         android:id="@+id/bienvenidatxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="60dp"
+        android:background="#654D4C"
         android:gravity="center"
         android:text="Bienvenido() al Banco Hurtado"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:background="#B87B92"
         app:layout_constraintBottom_toTopOf="@+id/montotxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,10 +61,15 @@
 
     <TextView
         android:id="@+id/indicacionestxt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="25dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
+        android:layout_marginEnd="30dp"
+        android:background="#654D4C"
         android:text="Presiona la hurtadoacción que deseas realizar"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,13 +81,14 @@
         android:layout_height="51dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="100dp"
         android:ems="10"
         android:hint="Monto $"
         android:inputType="number"
+        android:textColorHint="#070A17"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/okbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -85,7 +96,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
+        android:backgroundTint="#B87B92"
         android:text="OK"
+        android:textColor="#100202"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

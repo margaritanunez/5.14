@@ -17,5 +17,9 @@
         android:id="@+id/nameFragment"
         android:name="com.example.myapplication.NameFragment"
         android:label="fragment_name"
-        tools:layout="@layout/fragment_name" />
+        tools:layout="@layout/fragment_name" >
+        <action
+            android:id="@+id/action_nameFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
 </navigation>

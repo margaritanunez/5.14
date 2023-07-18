@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.example.myapplication.databinding.FragmentNameBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -58,16 +59,31 @@ class NameFragment : Fragment() {
     fun ingresarSaldo(){
         saldo += binding.montotxt.text.toString().toInt()
         Toast.makeText(context, "Su saldo ha sido actualizado correctamente", Toast.LENGTH_LONG).show()
-
+        limpiar()
     }
 
     fun retirarMonto(){
-        saldo-= binding.montotxt.text.toString().toInt()
-        Toast.makeText(context, "El retiro ha sido realizado correctamente", Toast.LENGTH_LONG).show()
+        val monto= binding.montotxt.text.toString().toInt()
+        if (saldo >= monto) {
+            saldo-= monto
+            Toast.makeText(context, "El retiro ha sido realizado correctamente", Toast.LENGTH_LONG).show()
+            limpiar()
+        }else
+            Toast.makeText(context, "Saldo insuficiente, ingresar otro monto" , Toast.LENGTH_LONG).show()
+
     }
 
     fun finish(){
+        binding.okbutton.setOnClickListener{v->
+            val bundle = Bundle()
+            Toast.makeText(context, "Volver a pantalla principal", Toast.LENGTH_LONG).show()
+            Navigation.findNavController(v).navigate(R.id.action_nameFragment_to_inicioFragment, bundle)
+        }
 
+    }
+
+    fun limpiar(){
+        binding.montotxt.text.clear()
     }
 
     companion object {
