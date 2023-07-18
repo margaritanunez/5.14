@@ -18,10 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
+        android:id="@+id/radiogroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toTopOf="@+id/montotxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,25 +30,25 @@
         app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/versaldoradioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ver hurtadosaldo" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/depositarradioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Depositar hurtadomonto" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/girarradioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Girar hurtadomonto" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/salirradioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salir" />
@@ -73,7 +74,7 @@
         android:layout_marginBottom="148dp"
         android:ems="10"
         android:hint="Monto $"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/okbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

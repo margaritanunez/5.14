@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.myapplication.databinding.FragmentNameBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,14 +20,16 @@ private const val ARG_PARAM2 = "param2"
  */
 class NameFragment : Fragment() {
     private lateinit var binding : FragmentNameBinding
+
+    private var saldo = 0
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getString("Bienvenido(a) a Banco Hurtado: ")
             param2 = it.getString(ARG_PARAM2)
         }
     }
@@ -37,7 +40,34 @@ class NameFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentNameBinding.inflate(layoutInflater, container, false)
+        binding.bienvenidatxt.text= "Bienvenido a Banco Hurtado, $param1"
+
+        binding.okbutton.setOnClickListener{
+            when (binding.radiogroup.checkedRadioButtonId) {
+                R.id.versaldoradioButton ->
+                    binding.montotxt.setText(saldo.toString())
+                R.id.depositarradioButton-> ingresarSaldo()
+                R.id.girarradioButton-> retirarMonto()
+                R.id.salirradioButton-> finish()
+            }
+        }
+
         return binding.root
+    }
+
+    fun ingresarSaldo(){
+        saldo += binding.montotxt.text.toString().toInt()
+        Toast.makeText(context, "Su saldo ha sido actualizado correctamente", Toast.LENGTH_LONG).show()
+
+    }
+
+    fun retirarMonto(){
+        saldo-= binding.montotxt.text.toString().toInt()
+        Toast.makeText(context, "El retiro ha sido realizado correctamente", Toast.LENGTH_LONG).show()
+    }
+
+    fun finish(){
+
     }
 
     companion object {

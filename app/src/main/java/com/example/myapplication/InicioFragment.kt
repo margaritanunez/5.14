@@ -41,7 +41,7 @@ class InicioFragment : Fragment() {
         binding.ingresarbutton.setOnClickListener{view->
             val name = binding.nametxt.text.toString()
             val bundle = Bundle()
-            bundle.putString("Bienvenido(a) $name",  "a Banco Hurtado")
+            bundle.putString("Bienvenido(a) a Banco Hurtado: ", name)
             Navigation.findNavController(view).navigate(R.id.action_inicioFragment_to_nameFragment,bundle)
         }
         return binding.root
